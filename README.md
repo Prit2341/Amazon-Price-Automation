@@ -1,7 +1,7 @@
 # Amazon-Price-Automation
 This is Amazon Price Tracker That Track Amazon Price In Every 12hours <br/>
-I am Using The Rapid api amazon product Price data api<br/>
-
+In this Amazon Price Tracking Automation Programme Run Every 12 Hours And Check Price is Fell Down Or Not<br/>
+If it is Fell it send Message to The User 
 
 ## Used Librery
 1. Request

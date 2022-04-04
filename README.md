@@ -6,7 +6,7 @@ I am Using The Rapid api amazon product Price data api<br/>
 ## Used Librery
 1. Request
 2. smtplib
-3 .EmailMessage
+3. EmailMessage
 
 ## Reference
 Used API:- https://rapidapi.com/JSL346/api/amazon-product-price-data/<br/>

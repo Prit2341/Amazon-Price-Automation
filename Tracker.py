@@ -1,11 +1,10 @@
-from matplotlib.pyplot import title
 import requests
 from time import sleep
 
 Sub = "BOT"
 Body = "Your Cosmic byte keybrod price fell check out\nhttps://www.amazon.in/gp/product/B09MQZY875/ref=ox_sc_act_image_2?smid=A14CZOWI0VEHLG&psc=1"
 Email =  "pritmayani359@gmail.com"
-#Make Function For The We Can use Properly
+#Make Function For the sending mail to notify
 def Email_alert(subject,body,to):
     '''Impoet Some Librery For The perfoming'''
     import smtplib
@@ -44,27 +43,24 @@ import requests
 
 url = "https://amazon-product-price-data.p.rapidapi.com/product"
 
-querystring = {"asins":"B09MQZY875 ","locale":"IN"}
+querystring = {"asins":"B09MQZY875,B07PQYFPV8","locale":"IN"}
 
 headers = {
-    'x-rapidapi-host': "amazon-product-price-data.p.rapidapi.com",
-    'x-rapidapi-key': "3cfd55ad1emsh7898b78bc4c1acep1a7adbjsn3c738676c1e6"
-    }
+	"X-RapidAPI-Host": "amazon-product-price-data.p.rapidapi.com",
+	"X-RapidAPI-Key": "867fcb8387msh034f2da34f91894p1015dbjsn0af672c8f15a"
+}
 
 response = requests.request("GET", url, headers=headers, params=querystring)
 
 
-
-Data = response.json()
-title = Data[0]['product_name']
-Price = Data[0]['current_price']
-
-
 while True:
     Data = response.json()
-    title = Data[0]['product_name']
-    Price = Data[0]['current_price']
-    if Price <= 1799:
+    title_venth = Data[0]['product_name']
+    Price_venth = Data[0]['current_price']
+
+    title_neon = Data[1]['product_name']
+    Price_neon = Data[1]['current_price']
+    if (Price_neon < 2199) or (Price_venth < 1950):
         Email_alert(Sub,Body,Email)
     else:
         pass
